@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anonymous Feedback Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    p {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+    select, input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    textarea {
+      resize: vertical;
+    }
+    .radio-group {
+      margin-top: 5px;
+    }
+    .radio-group input {
+      width: auto;
+      margin-right: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      margin-top: 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .note {
+      font-size: 12px;
+      color: green;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Anonymous Feedback & Incident Reporting</h2>
+  <p>Your voice matters. Share feedback, report concerns, or suggest improvements anonymously.</p>
+  <p class="note"><strong>This form is completely anonymous. No personal data is collected.</strong></p>
+
+  <form action="https://formsubmit.co/ceo.admin@univerge.com" method="POST" enctype="multipart/form-data">
+
+    <!-- Disable captcha (optional) -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Email subject -->
+    <input type="hidden" name="_subject" value="New Anonymous Submission">
+
+    <!-- Redirect after submission -->
+    <input type="hidden" name="_next" value="https://thankyou.page/">
+
+    <label>Type of Submission</label>
+    <select name="Submission Type" required>
+      <option value="">Select</option>
+      <option>Feedback</option>
+      <option>Suggestion</option>
+      <option>Complaint</option>
+      <option>Incident Report</option>
+    </select>
+
+    <label>Department (Optional)</label>
+    <select name="Department">
+      <option value="">Select</option>
+      <option>Sales</option>
+      <option>Marketing</option>
+      <option>HR</option>
+      <option>Operations</option>
+      <option>Other</option>
+    </select>
+
+    <label>Subject</label>
+    <input type="text" name="Subject" required>
+
+    <label>Description</label>
+    <textarea name="Description" rows="5" required></textarea>
+
+    <label>Severity Level</label>
+    <div class="radio-group">
+      <input type="radio" name="Severity" value="Low" required> Low
+      <input type="radio" name="Severity" value="Medium"> Medium
+      <input type="radio" name="Severity" value="High"> High
+      <input type="radio" name="Severity" value="Critical"> Critical
+    </div>
+
+    <label>Date of Incident (Optional)</label>
+    <input type="date" name="Date">
+
+    <label>Upload Supporting File (Optional)</label>
+    <input type="file" name="Attachment">
+
+    <button type="submit">Submit Anonymously</button>
+
+  </form>
+</div>
+
+</body>
+</html>
